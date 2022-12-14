@@ -1,0 +1,64 @@
+
+            INSERT INTO public.author(
+            id, name, email)
+            VALUES (
+                1, 
+                'j.r.r tolkien', 
+                'tolkien@hotmail.com');
+        
+            INSERT INTO public.author(
+            id, name, email)
+            VALUES (
+                2, 
+                'tracey livesay', 
+                'livesay@outlook.com');
+        
+            INSERT INTO public.author(
+            id, name, email)
+            VALUES (
+                3, 
+                'antoine de saint-exupéry', 
+                'antoine@gmail.com');
+        
+            INSERT INTO public.author(
+            id, name, email)
+            VALUES (
+                4, 
+                'stephen king', 
+                'stephen@outlook.com');
+        
+            INSERT INTO public.author(
+            id, name, email)
+            VALUES (
+                5, 
+                'patrick rothfuss', 
+                'rothfuss@hotmail.com');
+        
+            INSERT INTO public.author(
+            id, name, email)
+            VALUES (
+                6, 
+                'patrick ness', 
+                'ness@outlook.com');
+        
+            INSERT INTO public.author(
+            id, name, email)
+            VALUES (
+                7, 
+                'lewis carroll', 
+                '');
+        
+            INSERT INTO public.author(
+            id, name, email)
+            VALUES (
+                8, 
+                'bram stoker', 
+                '');
+        
+            INSERT INTO public.author(
+            id, name, email)
+            VALUES (
+                9, 
+                'j.k rowling', 
+                'rowling@gmail.com');
+        

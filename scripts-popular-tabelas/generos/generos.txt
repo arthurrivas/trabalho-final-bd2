@@ -1,0 +1,42 @@
+
+            INSERT INTO public.literary_genre(
+            id, name)
+            VALUES (
+                1, 
+                'romance');
+        
+
+            INSERT INTO public.literary_genre(
+            id, name)
+            VALUES (
+                2, 
+                'fic��o');
+        
+
+            INSERT INTO public.literary_genre(
+            id, name)
+            VALUES (
+                3, 
+                'terror');
+        
+
+            INSERT INTO public.literary_genre(
+            id, name)
+            VALUES (
+                4, 
+                'aventura');
+        
+
+            INSERT INTO public.literary_genre(
+            id, name)
+            VALUES (
+                5, 
+                'suspense');
+        
+
+            INSERT INTO public.literary_genre(
+            id, name)
+            VALUES (
+                6, 
+                'infantil');
+        

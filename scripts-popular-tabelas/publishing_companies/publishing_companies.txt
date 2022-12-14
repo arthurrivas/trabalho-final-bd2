@@ -1,0 +1,60 @@
+
+            INSERT INTO public.publishing_company(
+            id, name, cnpj, url_site)
+            VALUES (
+                1, 
+                'Rocco', 
+                '12348678900234', 
+                'https://www.rocco.com.br/');
+
+        
+
+            INSERT INTO public.publishing_company(
+            id, name, cnpj, url_site)
+            VALUES (
+                2, 
+                'darkside', 
+                '82385978908235', 
+                'https://www.darksidebooks.com.br/');
+
+        
+
+            INSERT INTO public.publishing_company(
+            id, name, cnpj, url_site)
+            VALUES (
+                3, 
+                'intrinseca', 
+                '11395978909296', 
+                'https://www.intrinseca.com.br/');
+
+        
+
+            INSERT INTO public.publishing_company(
+            id, name, cnpj, url_site)
+            VALUES (
+                4, 
+                'harperCollins', 
+                '12444611911239', 
+                'https://harpercollins.com.br/');
+
+        
+
+            INSERT INTO public.publishing_company(
+            id, name, cnpj, url_site)
+            VALUES (
+                5, 
+                'suma', 
+                '12341618911214', 
+                '');
+
+        
+
+            INSERT INTO public.publishing_company(
+            id, name, cnpj, url_site)
+            VALUES (
+                6, 
+                'arqueiro', 
+                '12341618911214', 
+                'https://www.editoraarqueiro.com.br/');
+
+        

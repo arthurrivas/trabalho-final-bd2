@@ -1,0 +1,106 @@
+--BUSCA TODOS LIVROS DE UM ESCRITOR
+SELECT
+	author."name",
+	book.title,
+	book.description
+FROM
+	book
+INNER JOIN writer ON writer.fk_book_id = book.id
+INNER JOIN author ON author.id = writer.fk_author_id
+WHERE author.id = 1
+
+
+-- BUSCA LIVROS E QUANTIDADE EM ESTOQUE EM ORDEM DECRESCENTE
+SELECT 
+	book.title,
+	product.stock_quantaty
+FROM 
+	book
+INNER JOIN product ON product.fk_book_id = book.id
+ORDER BY product.stock_quantaty DESC
+
+
+-- BUSCA PELOS 10 AUTORES MAIS VENDIDOS
+SELECT
+	author.id,
+	author."name",
+	SUM(item_sale.quantity) as quantaty
+FROM 
+	author
+INNER JOIN writer ON writer.fk_author_id = author.id
+INNER JOIN book ON book.id = writer.fk_book_id
+INNER JOIN product ON product.fk_book_id = book.id
+INNER JOIN item_sale ON item_sale.fk_product_id = product.id
+GROUP BY
+	author.id,
+	author."name"
+ORDER BY SUM(item_sale.quantity) DESC
+LIMIT 10
+
+-- BUSCAR TODOS LIVROS COMPRADOS POR UM CLIENTE 
+SELECT
+	client.id,
+	client."name",
+	book.*
+FROM 
+	book
+INNER JOIN product ON product.fk_book_id = book.id
+INNER JOIN item_sale ON item_sale.fk_product_id = product.id
+INNER JOIN reg_sale ON reg_sale.id = item_sale.fk_reg_sale_id
+INNER JOIN client ON client.id = reg_sale.fk_client_id
+WHERE client.id = 1
+
+
+-- BUSCA ORDENADA DE GENEROS LITERARIOS MAIS VENDIDOS 
+SELECT
+	literary_genre.id,
+	literary_genre."name",
+	SUM(item_sale.quantity) as "count"
+FROM 
+	literary_genre
+INNER JOIN belongs_to ON belongs_to.fk_literary_genre_id = literary_genre.id
+INNER JOIN book ON book.id = belongs_to.fk_book_id
+INNER JOIN product ON product.fk_book_id = book.id
+INNER JOIN item_sale ON item_sale.fk_product_id = product.id
+GROUP BY 
+	literary_genre.id,
+	literary_genre."name"
+ORDER BY SUM(item_sale.quantity)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

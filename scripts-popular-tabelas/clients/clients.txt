@@ -1,0 +1,60 @@
+
+        INSERT INTO public.client(
+            id, name, cpf, email, birthday)
+            VALUES (
+                1, 
+                'arthur',
+                '12345678901', 
+                'arthur@gmail.com', 
+                '2000-07-19T00:00:00');
+        
+
+        INSERT INTO public.client(
+            id, name, cpf, email, birthday)
+            VALUES (
+                2, 
+                'joao',
+                '12345678902', 
+                'joao@hotmail.com', 
+                '2000-04-17T00:00:00');
+        
+
+        INSERT INTO public.client(
+            id, name, cpf, email, birthday)
+            VALUES (
+                3, 
+                'maria',
+                '12398745603', 
+                'maria@outlook.com', 
+                '2000-01-01T00:00:00');
+        
+
+        INSERT INTO public.client(
+            id, name, cpf, email, birthday)
+            VALUES (
+                4, 
+                'jose',
+                '15948726310', 
+                'jose@outlook.com', 
+                '2000-01-01T00:00:00');
+        
+
+        INSERT INTO public.client(
+            id, name, cpf, email, birthday)
+            VALUES (
+                5, 
+                'nathalia',
+                '26378986701', 
+                '', 
+                '2000-08-01T00:00:00');
+        
+
+        INSERT INTO public.client(
+            id, name, cpf, email, birthday)
+            VALUES (
+                6, 
+                'roberto',
+                '28378216501', 
+                '', 
+                '2000-08-01T00:00:00');
+        

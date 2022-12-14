@@ -1,0 +1,140 @@
+
+CREATE TABLE client (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR,
+    cpf VARCHAR,
+    email VARCHAR,
+    birthday DATE
+);
+
+
+CREATE TABLE reg_sale (
+    id SERIAL PRIMARY KEY,
+    date DATE,
+    amount float,
+    fk_client_id INTEGER
+);
+
+CREATE TABLE item_sale (
+    id SERIAL PRIMARY KEY,
+    quantity INTEGER,
+    unit_price float,
+    fk_reg_sale_id INTEGER,
+    fk_product_id INTEGER
+);
+
+CREATE TABLE literary_genre (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR
+);
+
+CREATE TABLE belongs_to (
+    fk_literary_genre_id INTEGER,
+    fk_book_id INTEGER
+);
+
+CREATE TABLE publishing_company (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR,
+    cnpj VARCHAR,
+    url_site VARCHAR
+);
+
+CREATE TABLE product (
+    id SERIAL PRIMARY KEY,
+    stock_quantaty INTEGER,
+    default_sale_price float,
+    last_sale DATE,
+    last_puchase DATE,
+    fk_book_id INTEGER
+);
+
+CREATE TABLE book (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR,
+    description TEXT
+);
+
+
+CREATE TABLE reg_purchase (
+    id SERIAL PRIMARY KEY,
+    date date,
+    amount float,
+    fk_publishing_company_id INTEGER
+);
+
+CREATE TABLE item_purchase (
+    item SERIAL PRIMARY KEY,
+    quantity INTEGER,
+    unit_price float,
+    fk_reg_purchase_id INTEGER,
+    fk_product_id INTEGER
+);
+
+CREATE TABLE author (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR,
+    email VARCHAR
+);
+
+CREATE TABLE writer (
+    fk_author_id INTEGER,
+    fk_book_id INTEGER
+);
+ 
+ALTER TABLE writer ADD CONSTRAINT FK_writer_1
+    FOREIGN KEY (fk_author_id)
+    REFERENCES author (id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE writer ADD CONSTRAINT FK_writer_2
+    FOREIGN KEY (fk_book_id)
+    REFERENCES book (id)
+    ON DELETE SET NULL;
+	
+ALTER TABLE item_purchase ADD CONSTRAINT FK_item_purchase_2
+    FOREIGN KEY (fk_reg_purchase_id)
+    REFERENCES reg_purchase (id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE item_purchase ADD CONSTRAINT FK_item_purchase_3
+    FOREIGN KEY (fk_product_id)
+    REFERENCES product (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE reg_purchase ADD CONSTRAINT FK_reg_purchase_2
+    FOREIGN KEY (fk_publishing_company_id)
+    REFERENCES publishing_company (id)
+    ON DELETE CASCADE;
+	
+ALTER TABLE product ADD CONSTRAINT FK_product_2
+    FOREIGN KEY (fk_book_id)
+    REFERENCES book (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE belongs_to ADD CONSTRAINT FK_belongs_to_1
+    FOREIGN KEY (fk_literary_genre_id)
+    REFERENCES literary_genre (id)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE belongs_to ADD CONSTRAINT FK_belongs_to_2
+    FOREIGN KEY (fk_book_id)
+    REFERENCES book (id)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE item_sale ADD CONSTRAINT FK_item_sale_2
+    FOREIGN KEY (fk_reg_sale_id)
+    REFERENCES reg_sale (id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE item_sale ADD CONSTRAINT FK_item_sale_3
+    FOREIGN KEY (fk_product_id)
+    REFERENCES product (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE reg_sale ADD CONSTRAINT FK_reg_sale_2
+    FOREIGN KEY (fk_client_id)
+    REFERENCES client (id)
+    ON DELETE CASCADE;
+	
+	
